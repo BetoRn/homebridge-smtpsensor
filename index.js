@@ -31,8 +31,8 @@ SmtpSensorPlatform.prototype = {
         callback(sensorAccessories);
 
         var server = new SMTPServer({
-            disabledCommands: ['AUTH']
-            ,
+            //disabledCommands: ['AUTH'],
+            authOptional: true,
             onData: function(stream, session, callback){
                 debug("Data received...");
                 var mailparser = new MailParser();
